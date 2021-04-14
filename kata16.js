@@ -9,9 +9,27 @@ const makeCase = function (input, selectedCase) {
   }
 
   for (let i = 0; i < caseArray.length; i++) {
+    let temp = '';
     if (caseArray[i] === 'camel') {
-      for (let j = 0; j < newString.length; j++) {}
+      for (let j = 0; j < newString.length; j++) {
+        if (newString[j - 1] === ' ') {
+          temp += newString[j].toUpperCase();
+        } else if (newString[j] !== ' ') {
+          temp += newString[j];
+        }
+      }
+      newString = temp;
     } else if (caseArray[i] === 'pascal') {
+      for (let j = 0; j < newString.length; j++) {
+        if (newString[j - 1] === ' ') {
+          temp += newString[j].toUpperCase();
+        } else if (j === 0 && newString[j] !== ' ') {
+          temp += newString[j].toUpperCase();
+        } else if (newString[j] !== ' ') {
+          temp += newString[j];
+        }
+      }
+      newString = temp;
     } else if (caseArray[i] === 'snake') {
     } else if (caseArray[i] === 'kebab') {
     } else if (caseArray[i] === 'title') {
