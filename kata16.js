@@ -1,6 +1,14 @@
 const makeCase = function (input, selectedCase) {
-  // Put your solution here
-  for ()
+  // selectedCase to array
+  var caseArray = [];
+  if (typeof selectedCase === 'string') {
+    caseArray = selectedCase.split();
+  } else {
+    caseArray = selectedCase;
+  }
+
+  for (let i = 0; i < caseArray.length; i++) {}
+  return caseArray;
 };
 
 console.log(makeCase('this is a string', 'camel'));
