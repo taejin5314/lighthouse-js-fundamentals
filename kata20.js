@@ -3,9 +3,12 @@ const blocksAway = function (directions) {
   let currentLocation = { east: 0, north: 0 };
   for (let i = 0; i < directions.length; i++) {
     if (i % 2 === 0) {
+      // if the direction is right, 90 degree turn clockwise.
       if (directions[i] === 'right') angle += 90;
+      // if the direction is left, 90 degree turn anticlockwise.
       else if (directions[i] === 'left') angle -= 90;
     } else if (i % 2 === 1) {
+      // make the angle between 0 to 359 degree.
       if (angle < 0) {
         angle += 360;
       } else if (angle >= 360) {
